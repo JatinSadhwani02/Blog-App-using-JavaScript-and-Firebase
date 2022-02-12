@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <!-- Required meta tags -->
+     <meta charset="utf-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1">
+ 
+     <!-- Bootstrap CSS -->
+     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+ 
+    <link rel="stylesheet" href="./style.css">
+    <title>Blog</title>
+</head>
+<body>
+    <h2 class="blogs">Welcome To My Blog</h2>
+    <div class="nav" style="border: 1px solid aquamarine; font-size: 18px; background-color: aquamarine;">
+        <div class="nav-logo">Show All Blogs</div>
+        <div class="nav-links"> 
+            <div class="nav-links-link" id="loginwithgoogle">Log In With Google</div> &nbsp;&nbsp;
+            <div class="nav-links-link" id="login">Log In</div>&nbsp;&nbsp;
+            <div class="nav-links-link" id="signup">Sign Up</div>&nbsp;&nbsp;
+            <div class="dropdown">
+                <div class="nav-links-link dropbtn" style="font-size: 18px;">Options</div>
+                <div class="dropdown-content dropdown-menu">
+                    <div class="nav-links-link dd" id="profile">Profile</div>
+                    <div class="nav-links-link dd" id="createblog">Create Blog</div>
+                    <div class="nav-links-link dd" id="updateblog">Update Blog</div>
+                    <div class="nav-links-link dd" id="deleteblog">Delete Blog</div>
+                </div>
+              </div>&nbsp;&nbsp;
+            <div class="nav-links-link" id="logout">Log Out</div>
+        </div>
+    </div> 
+
+
+    <div class="main-box">
+    </div>
+    <div class="loader"></div>
+    <div class="message-box"></div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+
+
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/8.6.2/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.2/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.2/firebase-firestore.js"></script>
+
+        
+    <script>
+
+    var firebaseConfig = {
+        apiKey: "AIzaSyD67qUgqXd8OJxnf2JzpI-LlfqdLQ-83XQ",
+        authDomain: "blogapp-9286f.firebaseapp.com",
+        databaseURL: "https://blogapp-9286f-default-rtdb.firebaseio.com",
+        projectId: "blogapp-9286f",
+        storageBucket: "blogapp-9286f.appspot.com",
+        messagingSenderId: "60502805691",
+        appId: "1:60502805691:web:019c306c0450ce9c592d9e"
+    };
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+        const auth = firebase.auth();
+        const db = firebase.firestore();
+        db.settings({
+            timestampsInSnapshots: true
+        })
+    </script>
+    <script type="module" src="./index.js"></script>
+    <script src="./services/logwithgoog.js"></script>
+</body>
+</html>
