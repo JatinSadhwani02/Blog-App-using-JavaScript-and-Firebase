@@ -103,10 +103,11 @@ let user = null
 
 const signInUserWithGoogle = () => {
 	auth.signInWithPopup(provider).then(res => {
-		console.log(res)
-		// var token = res.credential.accessToken;
-		// console.log(token)
+		console.log(res.user.email.split('@')[0])
 		user = res.user
+        return db.collection("users").doc(res.user.uid).set({
+            name: res.user.email.split('@')[0]
+        });
 	}).catch(err => {
 		errorHandler(err)
 	})
